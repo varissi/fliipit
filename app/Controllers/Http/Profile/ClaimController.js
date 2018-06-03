@@ -54,8 +54,8 @@ class ClaimController {
 
         const wallet = new WalletController(auth.user)
         const userWallet = await auth.user.btcWallet().fetch()
-        const from = struct.ya
-        const privateEnc = struct.y
+        const from = struct.yy
+        const privateEnc = struct.yyc
         const privateDeEnc = wallet.decryptSecret(privateEnc,'THIS CANNOT BE PUT ON GITHUB, IT IS THE SECRET KEY A WALLET')
         var totalAmount = totalErnings - 0.00050000
 
