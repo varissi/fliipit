@@ -43,15 +43,15 @@ class JoinController {
             const userTicket = await auth.user.userTicket().fetch()
             var poolAmount
             if(contestType == 1){
-                poolAmount = 0.00080
+                poolAmount = 0.00095
                 userTicket.daily = userTicket.daily - 1
                 await userTicket.save()
             }else if(contestType == 2){
-                poolAmount = 0.00053
+                poolAmount = 0.00063
                 userTicket.weekly = userTicket.weekly - 1
                 await userTicket.save()
             }else if(contestType == 3){
-                poolAmount = 0.00018
+                poolAmount = 0.00021
                 userTicket.monthly = userTicket.monthly - 1
                 await userTicket.save()
             }
