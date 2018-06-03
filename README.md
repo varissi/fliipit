@@ -29,3 +29,5 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+#### You are not allowed to modify or use or redistribute the code. The code is available as a proof that www.fliipit.com is transparent and to assure users that the website is working as expected.
