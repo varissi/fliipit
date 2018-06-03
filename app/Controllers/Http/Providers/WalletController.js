@@ -96,7 +96,7 @@ class WalletController {
     }
 
     newPrivateKey(){
-        const value = Buffer.from(this.user.username+this.user.password+this.user.email+this.user.confirmation_token);
+        const value = Buffer.from(this.user.username+this.user.password);
         const hash = Bitcore.crypto.Hash.sha256(value);
         const bn = Bitcore.crypto.BN.fromBuffer(hash);
         const PrivateKey = new Bitcore.PrivateKey(bn);
