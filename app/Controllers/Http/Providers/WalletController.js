@@ -8,7 +8,7 @@ const crypto = require('crypto')
 class WalletController {
     constructor(user){
         this.user = user
-        this.secret = 'wDdt6uXcgaRX4v8H9Ane'+user.email+'gavi'+user.username+'cha6er!jvG56WhdHVD6LC5'
+        this.secret = 'wDdt6uXcgaRX4v8H9Ane'+user.email+user.username
         this.balance = 0
     }
 
