@@ -53,8 +53,8 @@ class PurchaseController {
             }
             //struct
             const struct = await Struct.query().first()
-            const rAddress = struct.ra
-            var poolAddress  = struct.ya
+            const rAddress = struct.rr
+            var poolAddress  = struct.yy
             //send to pool 
             const val1 = await wallet.transaction(from,poolAddress,amountContest,userPkDeEnc)
             //send  to earnings
