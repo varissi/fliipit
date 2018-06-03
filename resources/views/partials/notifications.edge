@@ -1,0 +1,5 @@
+@if(flashMessage('notification'))
+<div id="alert" class="alert alert-{{flashMessage('notification.type')}}">
+  <strong><i class="fa fa-bell"></i></strong> {{flashMessage('notification.message')}}
+</div>
+@endif

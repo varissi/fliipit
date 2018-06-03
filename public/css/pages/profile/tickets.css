@@ -1,0 +1,28 @@
+.tickets{
+    height: 70px;
+}
+.tickets a{
+    color:white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 2em;
+}
+
+.form{
+    margin: auto;
+    padding: 10px;
+    background: white;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #e3e3e3;
+}
+
+.form p, .form p label{
+    text-align: center;
+}
+
+.form button{
+    width: 100% !important;
+}

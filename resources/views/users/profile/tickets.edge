@@ -1,0 +1,31 @@
+@layout('profile_master')
+
+@section('cssFiles')
+ {{ css('css/pages/profile/tickets.css') }}
+@endsection
+
+@section('content')
+    @if(contest == 1)
+        @include('forms.tickets.daily')
+    @elseif(contest == 2)
+        @include('forms.tickets.weekly')
+    @elseif(contest == 3)
+        @include('forms.tickets.monthly')
+    @else
+        <div class="row tickets">
+            <div class="col col-xs-12 col-sm-4">
+                <a class="btn btn-info" href="/tickets?contest=1"><i class="fa fa-tag"></i> Daily</a>
+            </div>
+            <div class="col col-xs-12 col-sm-4">
+                <a class="btn btn-info" href="/tickets?contest=2"><i class="fa fa-tag"></i> Weekly</a>
+            </div>
+            <div class="col col-xs-12 col-sm-4">
+                <a class="btn btn-info" href="/tickets?contest=3"><i class="fa fa-tag"></i> Monthly</a>
+            </div>
+        </div>
+    @endif
+@endsection
+
+@section('scriptFiles')
+{{ script('js/pages/profile/tickets.js') }}
+@endsection

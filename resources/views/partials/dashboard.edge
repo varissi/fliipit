@@ -1,0 +1,32 @@
+  <div class="l-sidebar">
+    <div class="logo">
+      <div class="logo__txt toggleMainMenue"><i class="fa fa-chevron-circle-right"></i></div>
+    </div>
+    <div class="l-sidebar__content">
+      <nav class="c-menu js-menu">
+        <ul class="u-list">
+          <li class="menue-item c-menu__item {{elIf('$self','is-active',summary)}}" data-toggle="tooltip" title="Dashboard">
+            <a href="{{route('profile')}}">
+            <div class="c-menu__item__inner"><i class="fa fa-dashboard"></i>
+              <div class="c-menu-item__title"><span>Dashboard</span></div>
+            </div>
+            </a>
+          </li>
+          <li class="menue-item c-menu__item {{elIf('$self','is-active',tickets)}}" data-toggle="tooltip" title="Tickets">
+            <a href="{{route('tickets')}}">
+            <div class="c-menu__item__inner"><i class="fa fa-tag" aria-hidden="true"></i>
+              <div class="c-menu-item__title"><span>Tickets</span></div>
+            </div>
+            </a>
+          </li>
+          <li class="menue-item c-menu__item {{elIf('$self','is-active',lucky)}}" data-toggle="tooltip" title="I'm lucky">
+            <a href="{{route('lucky')}}">
+            <div class="c-menu__item__inner"><i class="fa fa-gift" aria-hidden="true"></i>
+              <div class="c-menu-item__title"><span>I'm lucky</span></div>
+            </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>

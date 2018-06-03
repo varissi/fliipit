@@ -1,0 +1,59 @@
+@layout('master')
+
+@section('content')
+
+<form id="registrationForm" class="form col col-xs-12 col-md-6 offset-md-3" method="post" action="{{route('register')}}">
+    {{ csrfField() }}
+
+  <div class="form-group">
+    <input 
+    placeholder="Enter username" 
+    type="text" 
+    class="form-control {{hasErrorFor('username') ? 'is-invalid':''}}" 
+    value="{{old('username','')}}"
+    name="username">
+    {{elIf('<span class="invalid-feedback">$self</span>', getErrorFor('username'),hasErrorFor('username'))}}
+  </div>
+  
+
+  <div class="form-group">
+    <input 
+    placeholder="Enter email" 
+    type="email" 
+    class="form-control {{hasErrorFor('email') ? 'is-invalid':''}}" 
+    name="email">
+    {{elIf('<span class="invalid-feedback">$self</span>',getErrorFor('email'),hasErrorFor('email'))}}
+  </div>
+
+
+  <div class="form-group">
+    <input 
+    placeholder="Enter password" 
+    type="password" 
+    class="form-control {{hasErrorFor('password') ? 'is-invalid':''}}" 
+    name="password">
+     {{elIf('<span class="invalid-feedback">$self</span>',getErrorFor('password'), hasErrorFor('password'))}}
+  </div>
+
+
+  <div class="form-group checkbox">
+      <label>
+      <input required="required"
+      name="agree"
+      class=" {{hasErrorFor('agree') ? 'is-invalid':''}}" 
+      type="checkbox"> 
+      I have read and agree to these
+      <a style="color: #007cdc;" class="btn-link" href="{{route('terms')}}">Terms and Conditions.</a>
+      </label>
+      {{elIf('<span class="invalid-feedback">$self</span>',getErrorFor('agree'), hasErrorFor('agree'))}}
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{route('loginForm')}}">Login</a>
+        </li>
+    </ul>
+</form>
+
+@endsection

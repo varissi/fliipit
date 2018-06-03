@@ -1,0 +1,28 @@
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-light">
+  <a class="navbar-brand" href="/">Fliipit</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a class="nav-link btn btn-primary btn-link" href="{{route('daily')}}">Daily</a></li>
+      <li class="nav-item"><a class="nav-link btn btn-primary btn-link" href="{{route('weekly')}}">Weekly</a></li>
+      <li class="nav-item"><a class="nav-link btn btn-primary btn-link" href="{{route('monthly')}}">Monthly</a></li>
+      <li class="nav-item dropdown">
+      @loggedIn
+        <a class="nav-link dropdown-toggle btn btn-primary btn-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{auth.user.username}}
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/profile">Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
+        </div>
+        @else
+        <a class="nav-link btn btn-warning" href="{{route('login')}}">Login/Register</a>
+        @endloggedIn
+      </li>
+    </ul>
+  </div>
+</nav>

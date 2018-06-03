@@ -1,0 +1,16 @@
+<div class="participants col col-sm-8 container">
+  <table class="table list-users table-striped">
+      <thead>
+        <tr>
+          <th>Usernames</th>
+        </tr>
+      </thead>
+      <tbody>
+        @each(participant in participants)
+          <tr>
+            <td>{{participant.username}}</td>
+          </tr> 
+        @endeach     
+      </tbody>
+    </table>
+</div>

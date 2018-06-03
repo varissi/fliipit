@@ -1,0 +1,38 @@
+@layout('master')
+
+@section('content')
+
+<form id="loginForm" class="form col col-xs-12 col-md-6 offset-md-3" method="post" action="{{route('login')}}">
+    {{ csrfField() }}
+  <div class="form-group">
+    <input 
+    placeholder="Enter username" 
+    type="text" 
+    class="form-control {{hasErrorFor('username')?'is-invalid':''}}" 
+    name="username">
+    {{elIf('<span class="invalid-feedback">$self</span>',getErrorFor('username'),hasErrorFor('username'))}}
+  </div>
+  <div class="form-group">
+    <input 
+    placeholder="Enter password" 
+    type="password" 
+    class="form-control {{hasErrorFor('password')?'is-invalid':''}}" 
+    name="password">
+    {{elIf('<span class="invalid-feedback">$self</span>',getErrorFor('password'),hasErrorFor('password'))}}
+  </div>
+  <div class="checkbox">
+      <label><input name="remember" type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{route('registerForm')}}">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('forgotForm')}}">Forgot password?</a>
+        </li>
+    </ul>
+</form>
+
+
+@endsection

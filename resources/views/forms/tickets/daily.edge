@@ -1,0 +1,28 @@
+<form class="form col-sm-6" method="post" action="{{route('purchasedaily')}}">
+{{ csrfField() }}
+<div class="form-group">
+    <h3>Daily</h3>
+    <label for="qty" class="label">Quantity</label>
+    <input id="qty" value="0" type="number" min="1" step="1" name="quantity" class="form-control">
+</div>
+<p class="line"></p>
+    <div class="row">
+        <div class="col col-xs-6" >
+            <p><label>Price/Unit</label></p>
+            <p><label><i class="fa fa-bitcoin"></i> <span id="punit">0.001</span></label></p>
+        </div>
+        <div class="col col-xs-6" >
+            <p><label>Transaction Fees</label></p>
+            <p>Automatic</p>
+        </div>
+    </div>
+    <p class="line"></p>
+    <label>Total (Without Fees)</label><br>
+    <label><h3><i class="fa fa-bitcoin"></i> <span id="total">0</span></h3></label>
+    <br>
+    <button type="submit" class="btn btn-primary btn-lg">Buy Now</button>
+    <p class="line"></p>
+    <label style="color: #6d6d6d;font-size: 12px;">Fliipit.com takes 5% of the ticket price. The remaining 95% are for the contests.</label><br>
+    <label style="color: #6d6d6d;font-size: 12px;">Fees are automatically estimated by the server. They will be added to the total amount.</label>
+    <br><label style="color: #6d6d6d;font-size: 12px;">Tickets do not expire. You can use them at any time after purchase.</label>
+</form>

@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col col-sm-1 dark-bg hv-center center-block text-center">
+        <div title="statsus" class="led-box"><div class="{{stats.status}}"></div></div>
+    </div>
+    <div class="col col-sm-10 center-text"  id="particles">
+        <div class="p-abs">
+            @if(previousContest !=0)
+                <a class="navContest-left" href="{{previousContest}}"><i class="fa fa-arrow-left"></i> Previous</a>
+            @endif
+            <h1><i class="fa fa-bitcoin"></i> {{contest.btc}}</h1>
+            <h6>Participants: {{contest.numParticipants}}/{{contest.maxParticipants}}</h6>
+            @if(nextContest !=0)
+                <a class="navContest-right" href="{{nextContest}}">Next <i class="fa fa-arrow-right"></i></a>
+            @endif
+
+        </div>
+    </div>
+    <div class="col col-sm-1 dark-bg hv-center center-block text-center">
+        <div title="Capacity" class="led-box"><div class="{{stats.full}}"></div></div>
+    </div>
+</div>
+<div class="row progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated {{stats.progressStyle}}" role="progressbar" style="width: {{stats.progress}}%;" aria-valuenow="{{stats.progress}}" aria-valuemin="0" aria-valuemax="100">{{stats.progress}}%</div>
+</div>

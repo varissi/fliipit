@@ -1,0 +1,89 @@
+@layout('profile_master')
+
+@section('cssFiles')
+
+@endsection
+
+@section('content')
+<div class="row">
+    <div style="marding:5px" class="col col-xs-3">
+    <h3 style="color:#0e8ca1;">Daily: <i class="fa fa-bitcoin"></i> {{totalErningsDaily}}</h3>
+        <table style="background-color:#fff" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Claimed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                @each(dailyPrice in dailyPrices)
+                    <tr >
+                    <td><i class="fa fa-bitcoin"></i> {{dailyPrice.btc}}</td>
+                    <td>
+                    @if(dailyPrice.paid == 1)
+                        <i style="color:green;" class="fa fa-check"></i>
+                    @endif
+                    </td>
+                    </tr> 
+                @endeach   
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="marding:5px" class="col col-xs-3">
+    <h3 style="color:#0e8ca1;">Weekly: <i class="fa fa-bitcoin"></i> {{totalErningsWeekly}}</h3>
+        <table style="background-color:#fff" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Claimed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                @each(weeklyPrice in weeklyPrices)
+                    <tr >
+                    <td><i class="fa fa-bitcoin"></i> {{weeklyPrice.btc}}</td>
+                    <td>
+                    @if(weeklyPrice.paid == 1)
+                        <i style="color:green;" class="fa fa-check"></i>
+                    @endif
+                    </td>
+                    </tr> 
+                @endeach   
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="marding:5px" class="col col-xs-3">
+    <h3 style="color:#0e8ca1;">Monthly: <i class="fa fa-bitcoin"></i> {{totalErningsMonthly}}</h3>
+        <table style="background-color:#fff" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Claimed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                @each(monthlyPrice in monthlyPrices)
+                    <tr>
+                    <td><i class="fa fa-bitcoin"></i> {{monthlyPrice.btc}}</td>
+                    <td>
+                    @if(monthlyPrice.paid == 1)
+                        <i style="color:green;" class="fa fa-check"></i>
+                    @endif
+                    </td>
+                    </tr> 
+                @endeach   
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+@endsection
+
+@section('scriptFiles')
+
+@endsection

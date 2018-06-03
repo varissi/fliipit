@@ -1,0 +1,19 @@
+@layout('master')
+
+@section('cssFiles')
+    {{css('css/pages/index')}}
+@endsection
+
+@section('content')
+<h2 class="indexTitle">Winners are picked randomly for each contest</h2>
+@include('partials.index.boardContests')
+<p class="line"></p>
+@include('partials.index.steps')
+<p class="line"></p>
+@include('partials.index.chances')
+
+@endsection
+
+@section('scriptFiles')
+
+@endsection

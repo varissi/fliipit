@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120140674-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120140674-1');
+</script>
+
+<link rel="alternate" hreflang="en" href="https://fliipit.com/"/>
+<meta property="og:title" content="Earn Bitcoins Now">
+<meta property="og:description" content="Join our contest and earn Bicoins every day. It is 100% FREE.">
+<meta property="og:image" content="https://fliipit.com/img/logo.png">
+<meta property="og:url" content="http:https://fliipit.com/">
+<meta name="twitter:title" content="Earn Bitcoins Now">
+<meta name="twitter:description" content="Join our contest and earn Bicoins every day. It is 100% FREE.">
+<meta name="twitter:image" content="https://fliipit.com/img/logo.png"">
+<meta name="twitter:card" content="http:https://fliipit.com/">
+<meta property="og:site_name" content="Fliipit">
+<meta name="twitter:image:alt" content="Fliipit">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Fliipit is a free website that will help you earn Bitcoins everyday! Invite your friends and enjoy the contests.">
+  <meta name="keywords" content="money,bitcoins,crypto,currency,cryptocurrency,bitcoin,faucet,invest,buy,wallet,exchange,lottery,bitcoin lottery">
+  <meta name="author" content="Souleimane">
+    <title>Fliipit</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    {{ css('css/bootstrap.min.css') }}
+    {{ css('css/fontawesome.css') }}
+    {{ css('css/general.css') }}
+    {{css('css/pages/profile')}}
+    @!section('cssFiles')
+</head>
+<body>
+    @include('partials/header')
+    @include('partials/notifications')
+    <div id="contentWrapper">
+        @include('partials/dashboard')     
+        <div class="l-main">
+        <div class="content-wrapper content-wrapper--with-bg">
+            <div class="list-group">
+            @!section('content')
+            </div>
+        </div>
+        </div> 
+    </div>
+    @include('partials/footer')
+    {{ script('js/jquery.min.js') }}
+    {{ script('js/popper.min.js') }}
+    {{ script('js/bootstrap.min.js') }}
+    {{script('js/pages/general')}}
+    {{script('js/pages/profile')}}
+    @!section('scriptFiles')
+</body>
+</html>

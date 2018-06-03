@@ -1,0 +1,32 @@
+<div class="modal fade" id="claim" tabindex="-1" role="dialog" aria-labelledby="claim" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="claim">Send Your Earnings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        @if(balance.btc > 0.2)
+            <form action="{{route('claim')}}" method="post">
+                {{ csrfField() }}
+                <label for="address" class="label">Address</label>
+                <input placeholder="{{btcWallet.adress}}" id="address" type="text" name="address" class="form-control">
+                <p class="line"></p>
+                <button style="width:100%" type="submit" class="btn btn-success">Send</button>
+            </form>
+        @else
+            <span>
+                You must earn more than 0.2 Bitcoins in order to claim your earnings.
+            </span>
+        @endif
+      </div>
+      <div class="modal-footer">
+        @if(balance.btc > 0.2)
+            <p id="qradress">Fliipit Wallet: {{btcWallet.adress}}</p>
+        @endif
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+@layout('profile_master')
+
+@section('cssFiles')
+  {{ css('css/pages/profile/summary.css') }}
+@endsection
+
+@section('content')
+
+<div class="row board">
+    <div class="col col-xs-12 col-md-4 wallet">
+        <div class="dash-square col col-xs-7">
+
+            <h3 style="color:#02b502;"><i class="fa fa-bitcoin"></i> {{btcWallet.btc}}</h3>
+            <p>My Wallet</p>
+            <div class="row">
+            <div class="col col-xs-12 col-sm-6"><a class="btn btn-primary btn-link" data-toggle="modal" data-target="#receive">Receive</a></div>
+            {{elIf('<div class="col col-xs-12 col-sm-6"><a class="btn btn-primary btn-link" href="https://blockchain.info/address/$self" >Blockchain</a></div>',btcWallet.adress,btcWallet)}}
+            </div>
+        </div>
+        <p class="line"></p>
+        <div class="row level">
+            <div class="col col-xs-12 col-sm-6">
+                <h1>Current Particiations</h1>
+                <p>{{currentParticipations}}</p>
+            </div>
+            <div class="col col-xs-12 col-sm-6">
+                <h1>Total Particiations</h1>
+                <p>{{totalParticipations}}</p>
+            </div>
+        </div>        
+    </div>
+    <div class="col col-xs-12 col-md-8 contest">
+        <div class="dash-tickets">
+            <div class="row">
+                <div class="dash-square  col col-xs-4">
+                    <p>Daily</p><h3>{{userTicket.daily}}</h3>
+                </div>
+                <div class="dash-square  col col-xs-4">
+                    <p>Weekly</p><h3>{{userTicket.weekly}}</h3>
+                </div>
+                <div class="dash-square  col col-xs-4">
+                    <p>Monthly</p><h3>{{userTicket.monthly}}</h3>
+                </div>
+            </div>
+            <p class="line"></p>
+            <div class="col">
+                <h4 style="color:#338b99;"><i class="fa fa-bitcoin"></i> {{balance.btc}} </h4>
+                <p><i class="fa fa-trophy" aria-hidden="true"></i> Total Earnings</p>
+                <div class="row">
+                    <div class="col col-xs-12 col-sm-6"><a href="{{route('tickets')}}" class="btn btn-primary btn-link">Buy Tickets</a></div>
+                    <div class="col col-xs-12 col-sm-6"><a class="btn btn-primary btn-link"  data-toggle="modal" data-target="#claim">Claim</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row contests_summary">
+    <div class="row">
+        <div class="dash-square  col col-xs-4">
+            <p>Today</p>
+            <h3><i class="fa fa-bitcoin"></i> {{dailyContest.btc}} </h3>
+            <h6>Participants: {{dailyContest.numParticipants}}/{{dailyContest.maxParticipants}}</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated {{dailyStat.dailyProgressStyle}}" role="progressbar" style="width: {{dailyStat.dailyProgress}}%;" aria-valuenow="{{dailyStat.dailyProgress}}" aria-valuemin="0" aria-valuemax="100">{{dailyStat.dailyProgress}}%</div>
+            </div>
+            <p class="line"></p>
+            <div class="row">
+                <div title="Status" class="led-box col col-xs-12 col-sm-6"><div class="{{dailyStat.dailyStatus}}"></div></div>
+                <div title="Capacity" class="led-box col col-xs-12 col-sm-6"><div class="{{dailyStat.dailyFull}}"></div></div>
+            </div>
+        </div>
+        <div class="dash-square  col col-xs-4">
+            <p>This Week</p>
+            <h3><i class="fa fa-bitcoin"></i> {{weeklyContest.btc}} </h3>
+            <h6>Participants: {{weeklyContest.numParticipants}}/{{weeklyContest.maxParticipants}}</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated {{weeklyStat.weeklyProgressStyle}}" role="progressbar" style="width: {{weeklyStat.weeklyProgress}}%;" aria-valuenow="{{weeklyStat.weeklyProgress}}" aria-valuemin="0" aria-valuemax="100">{{weeklyStat.weeklyProgress}}%</div>
+            </div>
+            <p class="line"></p>
+            <div class="row">
+                <div title="Status" class="led-box col col-xs-12 col-sm-6"><div class="{{weeklyStat.weeklyStatus}}"></div></div>
+                <div title="Capacity" class="led-box col col-xs-12 col-sm-6"><div class="{{weeklyStat.weeklyFull}}"></div></div>
+            </div>
+        </div>
+        <div class="dash-square  col col-xs-4">
+            <p>This Month</p>
+            <h3><i class="fa fa-bitcoin"></i> {{monthlyContest.btc}} </h3>
+            <h6>Participants:  {{monthlyContest.numParticipants}}/{{monthlyContest.maxParticipants}}</h6>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated {{monthlyStat.monthlyProgressStyle}}" role="progressbar" style="width: {{monthlyStat.monthlyProgress}}%;" aria-valuenow="{{monthlyStat.monthlyProgress}}" aria-valuemin="0" aria-valuemax="100">{{monthlyStat.monthlyProgress}}%</div>
+            </div>
+            <p class="line"></p>
+            <div class="row">
+                <div title="Status" class="led-box col col-xs-12 col-sm-6"><div class="{{monthlyStat.monthlyStatus}}"></div></div>
+                <div title="Capacity" class="led-box col col-xs-12 col-sm-6"><div class="{{monthlyStat.monthlyFull}}"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@include('partials.modals.receive')
+
+
+@include('partials.modals.claim')
+
+@endsection
+
+@section('scriptFiles')
+    {{ script('js/jqr.js') }}
+    {{ script('js/pages/profile/qr.js') }}
+@endsection

@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+html,body,#contentWrapper{
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width:100%;
+}
+
+.modal-body p {
+    word-wrap: break-word;
+}
+
+#contentWrapper{
+    top:82px;
+    position: relative;
+    margin-bottom: 152px;
+    padding-bottom: 20px;
+}
+
+html {
+    height: 100%;
+    overflow-y: auto;
+  }
+  body {
+    min-height: 100%;
+    background-color: #f2f6f6;
+    display:flex;
+  }
+
+  a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+#mainNav{
+    background-color: #007cdc !important;
+    font-family: 'Quicksand', sans-serif !important;
+    z-index: 10000;
+    min-height: 82px;
+    position: fixed;
+    width: 100%;
+}
+
+#mainNav .nav-item{
+    margin: 10px;
+}
+
+#mainNav .navbar-brand{
+    font-weight: bolder;
+}
+
+
+#mainNav > #navbarSupportedContent > ul > li > a{
+    padding: 10px !important;
+    color: white;
+}
+
+#mainNav > #navbarSupportedContent > ul > li > a:hover,#mainNav > #navbarSupportedContent > ul > li > a:focus{
+    background-color: #f8bd06 !important;
+}
+
+
+#registrationForm, #loginForm{
+    padding: 20px;
+    background-color: #efefef;
+    border-radius: 10px;
+    border:1px solid #d0d0d0;
+    box-shadow: 0 0 10px #9d9d9d;
+    margin: auto;
+    position: relative;
+    top: 100px;
+}
+#registrationForm .checkbox, #loginForm .checkbox{
+    color:#868686;
+}
+
+#registrationForm button, #loginForm button{
+    width: 100%;
+}
+
+#registrationForm ul li, #loginForm ul li{
+    text-align: center;
+    width: 100%;  
+}
+
+#registrationForm ul li:hover, #loginForm ul li:hover{
+    text-decoration: underline;
+}
+
+.list-users{
+    font-size: 12px;
+}
+
+.alert{
+    position: absolute;
+    width: 100%;
+    top:82px;
+    z-index: 20;
+}
+
+.line{
+    display: block !important;
+    width: 100% !important;
+    height: 1px !important;
+    background-color: #f5f5f5 !important;
+    margin: 10px auto !important;
+}
+
+.dark-bg{
+    background: #3c3c3c;
+}
+
+.center-text{
+    text-align: center;
+}
+
+#particles{
+    background-color: #168da0;
+    max-height: 100px;
+    padding: 0;
+}
+
+#particles .pg-canvas{
+    max-height: 100px;
+}
+
+.p-abs{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background: #0000003b;
+    bottom: 0;
+    padding: 5px;
+}
+
+.hv-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.led-box {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    margin: auto;
+    padding: 0;
+  }
+  
+  .led-green {
+    position: relative;
+    top: 35%;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    background-color: #ABFF00;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+  }
+
+  .led-red {
+    position: relative;
+    top: 35%;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    background-color: #F00;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+    -webkit-animation: blinkRed 0.5s infinite;
+    -moz-animation: blinkRed 0.5s infinite;
+    -ms-animation: blinkRed 0.5s infinite;
+    -o-animation: blinkRed 0.5s infinite;
+    animation: blinkRed 0.5s infinite;
+  }
+  
+  @-webkit-keyframes blinkRed {
+      from { background-color: #F00; }
+      50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+      to { background-color: #F00; }
+  }
+  @-moz-keyframes blinkRed {
+      from { background-color: #F00; }
+      50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+      to { background-color: #F00; }
+  }
+  @-ms-keyframes blinkRed {
+      from { background-color: #F00; }
+      50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+      to { background-color: #F00; }
+  }
+  @-o-keyframes blinkRed {
+      from { background-color: #F00; }
+      50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+      to { background-color: #F00; }
+  }
+  @keyframes blinkRed {
+      from { background-color: #F00; }
+      50% { background-color: #A00; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 0;}
+      to { background-color: #F00; }
+  }
+
+.contests{
+      padding: 10px;
+      margin: auto;
+      text-align: center;
+      background-color: #f2f6f6;
+  }
+
+.contests a, .contests button{
+      width: 100%;
+  }
+
+  .contests > div{
+    margin: 10px;
+    background: white;
+    box-shadow: 0 0 5px #e1e1e1;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .actionContest h1.ended,  .actionContest h1.full{
+      color: white;
+      padding: 5px;
+      margin-bottom: 10px;
+      background-color: #da0000;
+  }
+
+  .actionContest h1.ended{
+    background-color: #656565;
+    color: #e3e3e3;
+  }
+
+  .actionContest h4.participated{
+      color:rebeccapurple;
+  }
+
+  .actionContest h5{
+      color: #808080;
+  }
+
+  .navContest-left{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    color: #ffffff69 !important;
+    cursor: pointer;
+  }
+
+  .navContest-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    color: #ffffff69 !important;
+    cursor: pointer;
+  }
+
+  .navContest-left:hover,.navContest-right:hover{
+    color:#fff !important;
+  }
+
+  .form{
+    margin: 5px;
+    padding: 5px;
+  }
+
+  footer{
+    font-family: 'Quicksand', sans-serif !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    background: #007cdc;
+    color: white;
+    height: 70px;
+    line-height: 70px;
+    z-index: 100;
+  }
+
+  #terms{
+    font-family: 'Quicksand', sans-serif !important;
+  }
+
+  #terms p{
+	display: block !important;
+}
+
+  #terms h2{
+    color: #5f5f5f;
+  }
+
+  #terms .line{
+      background-color: #dcdcdc !important;
+  }
+
+  footer .nav li, footer .rights{
+      margin: 10px auto;
+      margin-top: 0;
+  }
+
+  footer .nav li a:visited,footer .nav li a:active,footer .nav li a:link{
+      color: white;
+  }
+
+  footer .nav li:hover{
+      text-decoration: none;
+  }
+
+  footer .rights{
+    position: relative;
+    left: 10px;
+  }

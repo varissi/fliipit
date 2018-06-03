@@ -1,0 +1,20 @@
+@layout('master')
+
+@section('content')
+
+@include('partials.contestheader')
+
+    <div class="row contests">
+        @include('partials.participants')
+        @include('partials.contestboard')
+    </div>
+
+    @include('partials.modals.winners')
+
+@endsection
+
+
+@section('scriptFiles')
+    {{script('js/particles.js')}}
+    {{script('js/pages/particles-settings.js')}}
+@endsection

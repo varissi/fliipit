@@ -1,0 +1,52 @@
+<div class="actionContest col col-sm-3">
+    
+        @if(contest.isDone == 1)
+            @if(contest.isValid == 1)  
+                <h1 class="ended">Ended</h1>
+                <h4 class="participated"><i class="fa fa-trophy"></i> {{contest.numParticipants}} Participated</h4> 
+                <a class="btn btn-primary btn-link" data-toggle="modal" data-target="#winners">{{contest.numWinners}} Winners</a>
+            @else
+                <h1 class="ended">Invalid</h1>
+                <h4 class="participated"><i class="fa fa-trophy"></i> {{contest.numParticipants}} Participated</h4> 
+                <p>There should be at least {{minParticipants}} participants</p>
+                <p>All tickets refunded</p>
+            @endif
+        @elseif(contest.isFull == 1)
+            <h1 class="full">Full</h1>
+            <h4 class="participated"><i class="fa fa-trophy"></i> {{contest.numParticipants}} Participated</h4> 
+            <p class="participated"><i class="fa fa-history"></i> Please wait for the next contest.</p>
+        @else
+  
+            @if(alreadyJoined == 1)
+                <button  class="btn btn-warning"><i class="fa fa-check"></i> Joined</button>
+                <p class="line"></p>
+                <h4 class="participated"><i class="fa fa-handshake-o"></i> Good Luck!</h4>
+            @else
+                    @loggedIn
+                        @if(numTickets < 1)
+                            <h4 class="participated"><i class="fa fa-trophy"></i> {{contest.numParticipants}} Participated</h4> 
+                            <a href="/tickets?contest={{contestType}}"><button type="submit" class="btn btn-success">Join</button></a>
+                        @else
+                            <h4 class="participated"><i class="fa fa-tag"></i> {{numTickets}}</h4>
+                            <form class="form" action="{{route('join')}}" method="post">
+                                {{ csrfField() }}
+                                <input type="hidden" name="contestType" value="{{contestType}}"/>
+                                <input type="hidden" name="contest_id" value="{{contest.id}}"/>
+                                <button type="submit" class="btn btn-success">Join</button>
+                            </form>
+                            @if(contest.numParticipants < minParticipants)
+                                <p class="line"></p>
+                                There should be at least {{minParticipants}} participants in order for this contest to be valid.<br>
+                                If the contest is invalid, tickets will be refunded.<br>
+                            @endif
+                        @endif
+                    @else
+                        <h4 class="participated"><i class="fa fa-trophy"></i> {{contest.numParticipants}} Participated</h4>
+                        <a style="color:white" href="{{route('login')}}" class="btn btn-danger btn-lg">Join</a>
+                    @endloggedIn
+            @endif
+            <p class="line"></p>
+            <p><i class="fa fa-bullhorn"></i> Please invite more people to participate.</p>
+
+      @endif
+</div>
